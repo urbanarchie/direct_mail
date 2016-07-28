@@ -982,7 +982,7 @@ class DirectMailUtility
 
         $pageRecord = BackendUtility::getRecord('pages', $pageUid);
         if (GeneralUtility::inList($GLOBALS['TYPO3_CONF_VARS']['FE']['content_doktypes'], $pageRecord['doktype'])) {
-            $newRecord['subject'] = $pageRecord['title'];
+            $newRecord['subject'] = 'News '.$pageRecord['title'].' /// '.$pageRecord['subtitle'];
             $newRecord['page']    = $pageRecord['uid'];
             $newRecord['charset'] = self::getCharacterSetOfPage($pageRecord['uid']);
         }
